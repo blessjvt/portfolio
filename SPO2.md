@@ -19,37 +19,32 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
 					Figure 1: Nellcor Sp02 Sensor Pinout 
 
- 
-
 3.2 Transimpedance Amplifier 
 
 A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $$ C=\dfrac{1}{2\pi\cdot R\cdot f} $$ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
- 
 
-Figure 2: Nellcor Sp02 Sensor Pinout 
+ <img width="448" height="334" alt="transimpedance amplifier" src="https://github.com/user-attachments/assets/e95c0c45-5ca3-4dba-b2b1-1cfe4a8f452c" />
 
- 
+	Figure 2: Transimpedance Amplifier 
 
 3.3 Multiplexer 
 
 As mentioned in 3.1, the multiplexer used in the circuit was the CD405xB CMOS Single 8- Channel Analog Multiplexer. The purpose of this component in the circuit was to control the on and off switching of the two LEDS to display two signals at once... 
 
- 
+ <img width="539" height="349" alt="MultiplexerPinout" src="https://github.com/user-attachments/assets/0f670f1f-9cb2-4f9c-8c86-a9207833d433" />
 
-Figure 3A: CD0453B Multiplexer Pinout 
+	Figure 3A: CD0453B Multiplexer Pinout 
 
- 
+ <img width="580" height="333" alt="Figure3b" src="https://github.com/user-attachments/assets/9049197f-4a9d-4ad9-8593-cc8f8e62f5b4" />
 
-Figure 3B: CD0453B Multiplexer Pin Functions 
+	Figure 3B: CD0453B Multiplexer Pin Functions 
 
 The physical connections to and from the mux can be found in Figure 3C. The selecting bit controls which LED is of priority. Pins 15 essentially says if bx (the transimpedance output signal) is high, then by is low, if bx is low, then by is high. The same concept applied to Pin 14. 
 
-Group 1809100299, Grouped object 
+<img width="744" height="302" alt="Figure3C" src="https://github.com/user-attachments/assets/683e518b-d0f7-4757-857e-09024805ab3a" />
 
-Figure 3C: CD0453B Multiplexer Pin Connections 
-
- 
+	Figure 3C: CD0453B Multiplexer Pin Connections 
 
 3.4 Filters 
 
@@ -59,7 +54,9 @@ A sequence of filters was implemented in the circuit to get rid of unwanted, dis
 
 The AC signal that derives from the photodiode tends to be corrupted by 60 Hz noise. As a result, a second-order active Butterworth low pass filter with a cutoff frequency of 45 Hz was implemented.  A low pass filter allows frequencies smaller than the desired cutoff frequency to pass, while high frequencies get blocked off. 
 
-Figure 4: Transfer function of 2nd order Lowpass filter 
+<img width="711" height="151" alt="Figure4" src="https://github.com/user-attachments/assets/3afca504-214e-4ee2-9132-9d21ad776fb9" />
+
+	Figure 4: Transfer function of 2nd order Lowpass filter 
 
  
 
