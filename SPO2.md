@@ -326,9 +326,10 @@ Next, the R-value can be solved needed for the SpO2 by using
 
 <img width="97" height="75" alt="Screenshot 2025-10-29 at 7 41 10 PM" src="https://github.com/user-attachments/assets/903fe839-0915-47ed-b969-547e2aa7e943" />
 
+
 And then use the SpO2 formula. This formula was found in Texas Instruments', “How to Design Peripheral Oxygen Saturation(Sp02) and Optical Heart Rate Monitoring (OHRM) Systems Using the AFE4403.” 
 
-𝑆𝑝𝑂2 = 110 − (25 ⋅ 𝑅)
+𝑆PO2 = 110 − (25 ⋅ 𝑅)
 
 To find the Sp02 value for the objective requirement. 
 
