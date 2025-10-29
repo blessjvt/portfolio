@@ -21,7 +21,7 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
 ** 3.2 Transimpedance Amplifier **
 
-A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $$ C=\dfrac{1}{2\pi\cdot R\cdot f} $$ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
+A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $ C=\dfrac{1}{2\pi\cdot R\cdot f} $ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
 
  <img width="448" height="334" alt="transimpedance amplifier" src="https://github.com/user-attachments/assets/e95c0c45-5ca3-4dba-b2b1-1cfe4a8f452c" />
@@ -267,17 +267,10 @@ The physical lowpass filter had a cutoff frequency of 44 Hz. The goal was 45 Hz,
 
 					Figure 15A: The Bode Plot of the Physical High Pass Filter 
 
- 
-
-A screen shot of a graph
-
-Description automatically generated 
-
-					<img width="598" height="418" alt="Figure15B" src="https://github.com/user-attachments/assets/68fd3f5c-fc8a-401c-a004-5e350e455064" />
+<img width="598" height="418" alt="Figure15B" src="https://github.com/user-attachments/assets/68fd3f5c-fc8a-401c-a004-5e350e455064" />
 
 					Figure 15B: The Spectrum Analysis of the lowpass filter vs the transimpedance amplifier 
 
- 
 
 5.3 Highpass Filter Physical Results  
 
@@ -324,7 +317,6 @@ The physical notch pass filter was successful in eliminating the 60 Hz cutoff po
 The simulated circuit was constructed physically. Each subsystem of the circuit was measured and compared to the simulated results as a way of verifying correctness. 
 
  
-
  <img width="306" height="379" alt="Figure18A" src="https://github.com/user-attachments/assets/d574b918-e609-4f18-b524-8d1cab018dfb" />
 
 
