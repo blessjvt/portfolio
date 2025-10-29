@@ -1,19 +1,19 @@
 # SPO2 Pulse Oximeter
 Using several passive and active filter combinations, I created a device that could read out oxygen levels and blood pressure levels of an individual 
 
-**1. Introduction**
+### 1. Introduction
 
 The product tasked to design was an SP02 oximeter and a heartbeat monitor. A pulse oximeter measures how much red and infrared light is being absorbed to determine the oxygen levels in a human’s body system. The ratio of the red-light measurement to the infrared light measurement would then tell how much oxygenated blood there is in the body, compared to deoxygenated. The SP02 design implements a Nellcor Ds- 100A connected with an SP02 finger sensor, a transimpedance amplifier, different filter designs, amplifiers, a multiplexer, an Arduino, and an OLED Display. 
 
-**2. High Level Design**
+### 2. High Level Design
+
 <img width="702" height="280" alt="DiagramofaDiagram" src="https://github.com/user-attachments/assets/2b088b63-d3ec-418a-a25e-8b202a24a161" />
 
-Subsystems 
+## 3. Subsystems
 
 **3.1 Sensor**
 
 The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (940nm), that transmit light through the finger to a photodiode on the other side.  Pins 2 and 3 were connected to the CD405xB CMOS Single 8- Channel Analog Multiplexer (goes more in depth on the role, in 3.3) to switch between the two signals. 
-
 
  <img width="379" height="370" alt="Sensor Pinout" src="https://github.com/user-attachments/assets/e7336416-536a-41f0-a198-c5436d8a8e32" />
 
@@ -22,7 +22,6 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 **3.2 Transimpedance Amplifier**
 
 A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $C=\dfrac{1}{2\pi R f}$. Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
-
 
  <img width="448" height="334" alt="transimpedance amplifier" src="https://github.com/user-attachments/assets/e95c0c45-5ca3-4dba-b2b1-1cfe4a8f452c" />
 
@@ -64,13 +63,11 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 
 Due to noise that happens very early, small frequencies that tend to interfere with the consistent harmonic oscillations of the signal, a high pass filter with a cutoff frequency of 1.1 Hz was implemented.  A highpass filter allows high frequencies to pass while cutting off low frequencies. The cutoff frequency was determined by running the Spectrum Analyzer on Waveform and finding high or low spikes that were not within 5 margins of error compared to the harmonic oscillations. 
 
- 
 <img width="564" height="378" alt="Figure5" src="https://github.com/user-attachments/assets/21dea657-44a2-44cf-bdac-01f10c4c4908" />
 
 					Figure 5: Transfer function of 2nd order Lowpass filter 
 
  <img width="170" height="111" alt="Figure5A" src="https://github.com/user-attachments/assets/c7c0dd59-ac1f-48e7-b8ed-823387552bf1" />
-
 
 					Figure 5A: Cutoff Frequency Equation of a High pass filter 
  
@@ -79,7 +76,6 @@ Due to noise that happens very early, small frequencies that tend to interfere w
 					Figure 5B: Transfer function of a 2nd order High pass filter 
 
  <img width="343" height="113" alt="Figure5C" src="https://github.com/user-attachments/assets/a357446d-33b8-49c0-9447-fe851bd6fc3a" />
-
 
 					Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
 
@@ -109,7 +105,6 @@ R
 
 <img width="345" height="233" alt="Figure7" src="https://github.com/user-attachments/assets/6a4fc636-6e5b-4353-9553-9b05ff8b22ce" />
 
- 
 					Figure 7: Non-inverting Amplifier Schematic and Gain Equation 
 
 𝐴𝑣=1+𝑅1𝑅2
@@ -125,11 +120,11 @@ R
  
 			 (1) 
 
-3.6 Arduino 
+**3.6 Arduino** 
 
 The Arduino’s purposes are an analog to digital converter, processing, and communicating. It reads an analog value from the signals and then converts it to digital to the multiplexer. Since the Nellcor Ds-100A only outputs in current the goal was to first make a trans-impedance amplifier that would convert the current source into a voltage source that operates from a voltage of 0V to 5V. Going forward, the goal of the microcontroller shifts to communication that will allow communication with the multiplexer, so that the shifting between Red and Infrared LED can take place. Lastly, the data needed to be processed and used to calculate the value of both the heart rate and Sp02 value.  
 
-3.7 OLED 
+**3.7 OLED**
 
 The goal for the OLED screen was to display both the Sp02 value, heart rate, and lastly the heartbeat pulse. The model we are using has only 4 pins and communicates with the Arduino Uno using I2C communication and with the help of both adafruit_SSD1306.h and the adafruit_GFX.h libraries. By correctly wiring the OLED screen to the microcontroller, we can observe the output of the circuit and display a pulse. Given the pulse, we can capture the DC and AC amplitude of both the Infrared and RED LED. Using that data, we can calculate the value of the Sp02 and heart rate . 
 arduino with OLED display schematic diagram 
@@ -140,22 +135,20 @@ arduino with OLED display schematic diagram
 
  
 
-Simulated Results 
+## 4. Simulated Results 
 
  
 
-4.1 LT Spice Simulation: Transimpedance Amplifier  
+**4.1 LT Spice Simulation: Transimpedance Amplifier**  
 
 From what was described in 3.1, a simulated circuit was designed in LT SPICE. Since the photosensor does not exist in LT SPICE, a current source of one microamp was used in its place. The simulated results produced a 2VPP. 
 
  <img width="557" height="363" alt="Figure9A" src="https://github.com/user-attachments/assets/9637b3ff-daf2-432e-96ba-dcc6fa8eae94" />
 
-
 					Figure 9A: LT SPICE Transimpedance Schematic  
 					
 
  <img width="660" height="362" alt="Figure9B" src="https://github.com/user-attachments/assets/e383e52b-05f2-45fe-ae28-c688c9a76160" />
-
 
 					Figure 9B: LT SPICE Transimpedance Plot of Input vs Output  
 
@@ -187,11 +180,9 @@ The active highpass filter was simulated to see which combination of physical co
 
  <img width="573" height="340" alt="Figure11A" src="https://github.com/user-attachments/assets/2f2e82f1-2b05-4687-a73f-50a0664f9b27" />
 
-
 					Figure 11A: LTSPICE Bode Plot of the High pass filter 
 
  <img width="438" height="443" alt="Figure11B" src="https://github.com/user-attachments/assets/d2cc8962-9383-47e1-b6ba-46ac2d076735" />
-
 
 					Figure 11B: LTSPICE 0.2 Hz Cutoff Frequency of the High Pass filter 
 
@@ -202,35 +193,21 @@ The passive notch filter was simulated to see which combinations of physical com
  
  <img width="438" height="343" alt="Figure12A" src="https://github.com/user-attachments/assets/81a4f3e1-2de3-412a-84cb-1f692a95ed21" />
 
-
 					Figure 12A: LT SPICE Simulation of the Notch Filter 
-
- 
-
  
 <img width="563" height="467" alt="Figure12B" src="https://github.com/user-attachments/assets/4df42fc4-1c7c-4059-a0e1-7b9106ff1389" />
 
- 
-
 					Figure 12B: LT SPICE Waveform graph of 60 Hz Cutoff Notch filter 
-
- 
-
- 
  
 <img width="404" height="400" alt="Figure12C" src="https://github.com/user-attachments/assets/ddd189e4-a1b5-4852-9217-f9740ad7b171" />
-
- 
 
 					Figure 12C LT SPICE 60 Hz Cutoff Frequency of the Notch filter 
 
  
 
-**5. Physical Results** 
+## 5. Physical Results
 
- 
-
-5.1 Transimpedance Physical Results: 
+**5.1 Transimpedance Physical Results:** 
 
 The Waveform Scope in figure 13 shows a successful current-to-voltage converter 
 
@@ -327,7 +304,7 @@ The simulated circuit was constructed physically. Each subsystem of the circuit 
 
 					Figure 18B: The physical circuit 
 
-**6. Digital Subsystem**
+## 6. Digital Subsystem
 
 Focusing on the digital subsystem, the digital subsystem is responsible for coordinating the entire operation of the SpO2 system. It controls the hardware components (LEDs, photodiode, and display), processes the signals, performs calculations, and updates the display. 
 Signal Reading: The microcontroller reads the signals from the photodiode through an analog input. The signals are generated by the light from the LEDs (Red and Infrared) that is reflected off the user's skin and received by the photodiode. 
@@ -477,7 +454,7 @@ The cause of these errors was also likely attributed to issues within the code i
 
  
 
-**7. Future Work** 
+## 7. Future Work
 
 To improve in the future, it is crucial to address the following areas: 
 
