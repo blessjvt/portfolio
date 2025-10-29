@@ -18,7 +18,7 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
  <img width="379" height="370" alt="Sensor Pinout" src="https://github.com/user-attachments/assets/e7336416-536a-41f0-a198-c5436d8a8e32" />
 
-													Figure 1: Nellcor Sp02 Sensor Pinout 
+												Figure 1: Nellcor Sp02 Sensor Pinout 
 
 **3.2 Transimpedance Amplifier**
 
