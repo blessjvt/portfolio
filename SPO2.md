@@ -96,18 +96,7 @@ $A_v=1 + \dfrac{1}{R1/R2}$ . To get a large amplification, the R2 was designed t
 
 					Figure 7: Non-inverting Amplifier Schematic and Gain Equation 
 
-𝐴𝑣=1+𝑅1𝑅2
-A
-v
-=
-1
-+
-R
-1
-R
-2
- 
-			 (1) 
+			 $A_v=1 + \dfrac{1}{R1/R2}$ (1) 
 
 **3.6 Arduino** 
 
