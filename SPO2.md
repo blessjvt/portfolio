@@ -19,7 +19,7 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
 					Figure 1: Nellcor Sp02 Sensor Pinout 
 
-**3.2 Transimpedance Amplifier **
+** 3.2 Transimpedance Amplifier **
 
 A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $$ C=\dfrac{1}{2\pi\cdot R\cdot f} $$ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
