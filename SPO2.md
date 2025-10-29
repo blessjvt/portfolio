@@ -72,7 +72,7 @@ Due to noise that happens very early, small frequencies that tend to interfere w
 					Figure 5A: Cutoff Frequency Equation of a High pass filter 
  
   <img width="176" height="79" alt="Figure5B" src="https://github.com/user-attachments/assets/4a085932-23e6-4197-b938-c41ce959fc7f" />
-
+ 
 					Figure 5B: Transfer function of a 2nd order High pass filter 
 
    <img width="343" height="113" alt="Figure5C" src="https://github.com/user-attachments/assets/a357446d-33b8-49c0-9447-fe851bd6fc3a" />
