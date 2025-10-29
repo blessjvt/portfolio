@@ -6,9 +6,9 @@ Using several passive and active filter combinations, I created a device that co
 The product tasked to design was an SP02 oximeter and a heartbeat monitor. A pulse oximeter measures how much red and infrared light is being absorbed to determine the oxygen levels in a human’s body system. The ratio of the red-light measurement to the infrared light measurement would then tell how much oxygenated blood there is in the body, compared to deoxygenated. The SP02 design implements a Nellcor Ds- 100A connected with an SP02 finger sensor, a transimpedance amplifier, different filter designs, amplifiers, a multiplexer, an Arduino, and an OLED Display. 
 
 ### 2. High Level Design
-<p style="text-align:center;">
+
 <img width="702" height="280" alt="DiagramofaDiagram" src="https://github.com/user-attachments/assets/2b088b63-d3ec-418a-a25e-8b202a24a161" />
-</p>
+
 
 ## 3. Subsystems
 
