@@ -10,7 +10,7 @@ High Level Design
 
 Subsystems 
 
-3.1 Sensor 
+**3.1 Sensor **
 
 The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (940nm), that transmit light through the finger to a photodiode on the other side.  Pins 2 and 3 were connected to the CD405xB CMOS Single 8- Channel Analog Multiplexer (goes more in depth on the role, in 3.3) to switch between the two signals. 
 
@@ -19,7 +19,7 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
 					Figure 1: Nellcor Sp02 Sensor Pinout 
 
-3.2 Transimpedance Amplifier 
+**3.2 Transimpedance Amplifier **
 
 A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $$ C=\dfrac{1}{2\pi\cdot R\cdot f} $$ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
@@ -28,7 +28,7 @@ A transimpedance amplifier was implemented in the circuit to convert a current s
 
 					Figure 2: Transimpedance Amplifier 
 
-3.3 Multiplexer 
+**3.3 Multiplexer **
 
 As mentioned in 3.1, the multiplexer used in the circuit was the CD405xB CMOS Single 8- Channel Analog Multiplexer. The purpose of this component in the circuit was to control the on and off switching of the two LEDS to display two signals at once... 
 
@@ -46,11 +46,11 @@ The physical connections to and from the mux can be found in Figure 3C. The sele
 
 					Figure 3C: CD0453B Multiplexer Pin Connections 
 
-3.4 Filters 
-
+**3.4 Filters 
+**
 A sequence of filters was implemented in the circuit to get rid of unwanted, disruptive noise at certain frequencies. 
 
-3.4.1 Lowpass 
+**3.4.1 Lowpass **
 
 The AC signal that derives from the photodiode tends to be corrupted by 60 Hz noise. As a result, a second-order active Butterworth low pass filter with a cutoff frequency of 45 Hz was implemented.  A low pass filter allows frequencies smaller than the desired cutoff frequency to pass, while high frequencies get blocked off. 
 
@@ -60,7 +60,7 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 
  
 
-3.4.2 Highpass 
+**3.4.2 Highpass **
 
 Due to noise that happens very early, small frequencies that tend to interfere with the consistent harmonic oscillations of the signal, a high pass filter with a cutoff frequency of 1.1 Hz was implemented.  A highpass filter allows high frequencies to pass while cutting off low frequencies. The cutoff frequency was determined by running the Spectrum Analyzer on Waveform and finding high or low spikes that were not within 5 margins of error compared to the harmonic oscillations. 
 
@@ -83,7 +83,7 @@ Due to noise that happens very early, small frequencies that tend to interfere w
 
 					Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
 
-3.4.3 Notch Filter 
+**3.4.3 Notch Filter **
 
 For some reason the low pass filter was not strong enough to fully compress the 60 Hz noise by –30 dB, therefore a notch filter with a 60 Hz cutoff frequency was added as the final filter. 
 
@@ -92,7 +92,7 @@ For some reason the low pass filter was not strong enough to fully compress the 
 
  
 
-3.5 Amplification 
+**3.5 Amplification **
 
 If the signal is too small, then the Arduino would not be able to read the signal. Therefore, by adding a non-inverting amplifier into our circuit, the signal could be amplified large enough for the Arduino to read. The gain was found by using the general non-inverting amplifier gain equation: 
 𝐴𝑣=1+𝑅1𝑅2
