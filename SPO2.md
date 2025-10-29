@@ -1,4 +1,5 @@
-<img width="107" height="69" alt="image" src="https://github.com/user-attachments/assets/a35a799e-d447-4f48-9c0a-84f943aa18e9" /># SPO2 Pulse Oximeter
+# SPO2 Pulse Oximeter
+
 Using several passive and active filter combinations, I created a device that could read out oxygen levels and blood pressure levels of an individual 
 
 ### 1. Introduction
