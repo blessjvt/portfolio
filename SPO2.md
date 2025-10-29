@@ -65,43 +65,30 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 Due to noise that happens very early, small frequencies that tend to interfere with the consistent harmonic oscillations of the signal, a high pass filter with a cutoff frequency of 1.1 Hz was implemented.  A highpass filter allows high frequencies to pass while cutting off low frequencies. The cutoff frequency was determined by running the Spectrum Analyzer on Waveform and finding high or low spikes that were not within 5 margins of error compared to the harmonic oscillations. 
 
  
+<img width="564" height="378" alt="Figure5" src="https://github.com/user-attachments/assets/21dea657-44a2-44cf-bdac-01f10c4c4908" />
 
-Figure 5: Transfer function of 2nd order Lowpass filter 
+					Figure 5: Transfer function of 2nd order Lowpass filter 
 
+ <img width="170" height="111" alt="Figure5A" src="https://github.com/user-attachments/assets/c7c0dd59-ac1f-48e7-b8ed-823387552bf1" />
+
+
+					Figure 5A: Cutoff Frequency Equation of a High pass filter 
  
+<img width="176" height="79" alt="Figure5B" src="https://github.com/user-attachments/assets/4a085932-23e6-4197-b938-c41ce959fc7f" />
 
-Figure 5A: Cutoff Frequency Equation of a High pass filter 
- 
+					Figure 5B: Transfer function of a 2nd order High pass filter 
 
-𝐻(𝑗𝑤)=𝑗𝑤𝑗𝑤+1𝑅𝐶
-H
-j
-w
-=
-j
-w
-j
-w
-+
-1
-R
-C
- 
- 
+ <img width="343" height="113" alt="Figure5C" src="https://github.com/user-attachments/assets/a357446d-33b8-49c0-9447-fe851bd6fc3a" />
 
-Figure 5B: Transfer function of a 2nd order High pass filter 
 
- 
-
-Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
+					Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
 
 3.4.3 Notch Filter 
 
 For some reason the low pass filter was not strong enough to fully compress the 60 Hz noise by –30 dB, therefore a notch filter with a 60 Hz cutoff frequency was added as the final filter. 
 
  
-
-Figure 6: Twin-T Notch Filter Design 
+					Figure 6: Twin-T Notch Filter Design 
 
  
 
@@ -122,8 +109,7 @@ R
 . To get a large amplification, the R2 was designed to be the smallest, yet acceptable resistance value for the circuit. The value was 1k ohm. 
 
  
-
-Figure 7: Non-inverting Amplifier Schematic and Gain Equation 
+					Figure 7: Non-inverting Amplifier Schematic and Gain Equation 
 
 𝐴𝑣=1+𝑅1𝑅2
 A
@@ -147,7 +133,7 @@ The Arduino’s purposes are an analog to digital converter, processing, and com
 The goal for the OLED screen was to display both the Sp02 value, heart rate, and lastly the heartbeat pulse. The model we are using has only 4 pins and communicates with the Arduino Uno using I2C communication and with the help of both adafruit_SSD1306.h and the adafruit_GFX.h libraries. By correctly wiring the OLED screen to the microcontroller, we can observe the output of the circuit and display a pulse. Given the pulse, we can capture the DC and AC amplitude of both the Infrared and RED LED. Using that data, we can calcuclate the value of the Sp02 and heartrate . 
 arduino with OLED display schematic diagram 
 
-Figure 8: Arduino and OLED Display Implementation 
+					Figure 8: Arduino and OLED Display Implementation 
 
  
 
@@ -161,17 +147,17 @@ From what was described in 3.1, a simulated Circuited was designed in LT SPICE. 
 
  
 
-Figure 9A: LT SPICE Transimpedance Schematic  
+					Figure 9A: LT SPICE Transimpedance Schematic  
 
  
 
  
 
-Figure 9B: LT SPICE Transimpedance Plot of Input vs Output  
+					Figure 9B: LT SPICE Transimpedance Plot of Input vs Output  
 
  
 
-Figure 9C: Transimpedance Measurement 
+					Figure 9C: Transimpedance Measurement 
 
 4.2 LT Spice Simulation: Lowpass Filter 
 
@@ -179,17 +165,17 @@ The active lowpass filter was simulated to see which combinations of physical co
 
  
 
-Figure 10A: LT SPICE circuit schematic of a 45 Cutoff Frequency Lowpass Filter 
+					Figure 10A: LT SPICE circuit schematic of a 45 Cutoff Frequency Lowpass Filter 
 
  
 
-Figure 10B: LT SPICE Lowpass filter BODE Plot 
+					Figure 10B: LT SPICE Lowpass filter BODE Plot 
 
  
 
  
 
-Figure 10C: LT SPICE 45 Hz Cutoff Frequency of the Lowpass filter 
+					Figure 10C: LT SPICE 45 Hz Cutoff Frequency of the Lowpass filter 
 
 4.3 LT Spice Simulation: Highpass Filter 
 
@@ -197,11 +183,11 @@ The active highpass filter was simulated to see which combination of physical co
 
  
 
-Figure 11A: LTSPICE Bode Plot of the High pass filter 
+					Figure 11A: LTSPICE Bode Plot of the High pass filter 
 
  
 
-Figure 11B: LTSPICE 0.2 Hz Cutoff Frequency of the High Pass filter 
+					Figure 11B: LTSPICE 0.2 Hz Cutoff Frequency of the High Pass filter 
 
 4.4 LT Spice Simulation: Notch Filter 
 
@@ -210,7 +196,7 @@ The passive notch filter was simulated to see which combinations of physical com
  
  
 
-Figure 12A: LT SPICE Simulation of the Notch Filter 
+					Figure 12A: LT SPICE Simulation of the Notch Filter 
 
  
 
@@ -218,7 +204,7 @@ Figure 12A: LT SPICE Simulation of the Notch Filter
 
  
 
-Figure 12B: LT SPICE Waveform graph of 60 Hz Cutoff Notch filter 
+					Figure 12B: LT SPICE Waveform graph of 60 Hz Cutoff Notch filter 
 
  
 
@@ -227,7 +213,7 @@ Figure 12B: LT SPICE Waveform graph of 60 Hz Cutoff Notch filter
 
  
 
-Figure 12C LT SPICE 60 Hz Cutoff Frequency of the Notch filter 
+					Figure 12C LT SPICE 60 Hz Cutoff Frequency of the Notch filter 
 
  
 
@@ -249,11 +235,11 @@ The spectrum analyzer of the transimpedance revealed the frequencies of interest
 
  
 
-Figure 14A:  60 Hz Spike 
+					Figure 14A:  60 Hz Spike 
 
  
 
-Figure 14B: Noise at the beginning of the signal 
+					Figure 14B: Noise at the beginning of the signal 
 
  
  
@@ -264,7 +250,7 @@ The physical lowpass filter had a cutoff frequency of 44 Hz. The goal was 45 Hz,
 
  
 
-Figure 15A: The Bode Plot of the Physical High Pass Filter 
+					Figure 15A: The Bode Plot of the Physical High Pass Filter 
 
  
 
@@ -272,7 +258,8 @@ A screen shot of a graph
 
 Description automatically generated 
 
-Figure 15B: The Spectrum Analysis of the lowpass filter vs the transimpedance amplifier 
+					
+					Figure 15B: The Spectrum Analysis of the lowpass filter vs the transimpedance amplifier 
 
  
 
@@ -282,19 +269,19 @@ The physical high pass filter had a cutoff frequency of 5 Hz. The physical high 
 
 	 
 
-Figure 16A: The Bode Plot of the Physical High Pass Filter 
+					Figure 16A: The Bode Plot of the Physical High Pass Filter 
 
  
 
  
 
-Figure 16B: The Spectrum analysis of the High pass filter output vs Low pass filter output 
+					Figure 16B: The Spectrum analysis of the High pass filter output vs Low pass filter output 
 
  
 
  
 
-Figure 16C: The Spectrum analysis of the High pass filter output vs the transimpedance amplifier output 
+					Figure 16C: The Spectrum analysis of the High pass filter output vs the transimpedance amplifier output 
 
  
 
@@ -306,11 +293,11 @@ The physical notch pass filter was successful in eliminating the 60 Hz cutoff po
 
 Inserting image... 
 
-Figure 17A: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) 
+					Figure 17A: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) 
 
 Inserting image... 
 
-Figure 17B: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) Zoomed Out 
+					Figure 17B: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) Zoomed Out 
 
 5.5 Physical Circuit 
 
@@ -320,13 +307,13 @@ The simulated circuit was constructed physically. Each subsystem of the circuit 
 
  
 
-Figure 18A: The transimpedance and Mux integrated in the physical circuit 
+					Figure 18A: The transimpedance and Mux integrated in the physical circuit 
 
  
 
  
 
-Figure 18B: The physical circuit 
+					Figure 18B: The physical circuit 
 
 Digital Subsystem 
 
@@ -341,7 +328,7 @@ Display: The Arduino controls the OLED display to show the calculated heart rate
 
  
 
-Figure 19: An overall FSM of the digital subsystem 
+					Figure 19: An overall FSM of the digital subsystem 
 
  
 
