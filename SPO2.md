@@ -10,7 +10,7 @@ High Level Design
 
 Subsystems 
 
-**3.1 Sensor **
+**3.1 Sensor**
 
 The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (940nm), that transmit light through the finger to a photodiode on the other side.  Pins 2 and 3 were connected to the CD405xB CMOS Single 8- Channel Analog Multiplexer (goes more in depth on the role, in 3.3) to switch between the two signals. 
 
@@ -19,16 +19,16 @@ The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (94
 
 					Figure 1: Nellcor Sp02 Sensor Pinout 
 
-** 3.2 Transimpedance Amplifier **
+**3.2 Transimpedance Amplifier**
 
-A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $ C=\dfrac{1}{2\pi\cdot R\cdot f} $ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
+A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $C=\dfrac{1}{2\pi R f}$. Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
 
  <img width="448" height="334" alt="transimpedance amplifier" src="https://github.com/user-attachments/assets/e95c0c45-5ca3-4dba-b2b1-1cfe4a8f452c" />
 
 					Figure 2: Transimpedance Amplifier 
 
-**3.3 Multiplexer **
+**3.3 Multiplexer**
 
 As mentioned in 3.1, the multiplexer used in the circuit was the CD405xB CMOS Single 8- Channel Analog Multiplexer. The purpose of this component in the circuit was to control the on and off switching of the two LEDS to display two signals at once... 
 
@@ -46,11 +46,11 @@ The physical connections to and from the mux can be found in Figure 3C. The sele
 
 					Figure 3C: CD0453B Multiplexer Pin Connections 
 
-**3.4 Filters 
-**
+**3.4 Filters**
+
 A sequence of filters was implemented in the circuit to get rid of unwanted, disruptive noise at certain frequencies. 
 
-**3.4.1 Lowpass **
+**3.4.1 Lowpass**
 
 The AC signal that derives from the photodiode tends to be corrupted by 60 Hz noise. As a result, a second-order active Butterworth low pass filter with a cutoff frequency of 45 Hz was implemented.  A low pass filter allows frequencies smaller than the desired cutoff frequency to pass, while high frequencies get blocked off. 
 
@@ -60,7 +60,7 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 
  
 
-**3.4.2 Highpass **
+**3.4.2 Highpass**
 
 Due to noise that happens very early, small frequencies that tend to interfere with the consistent harmonic oscillations of the signal, a high pass filter with a cutoff frequency of 1.1 Hz was implemented.  A highpass filter allows high frequencies to pass while cutting off low frequencies. The cutoff frequency was determined by running the Spectrum Analyzer on Waveform and finding high or low spikes that were not within 5 margins of error compared to the harmonic oscillations. 
 
@@ -83,7 +83,7 @@ Due to noise that happens very early, small frequencies that tend to interfere w
 
 					Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
 
-**3.4.3 Notch Filter **
+**3.4.3 Notch Filter**
 
 For some reason the low pass filter was not strong enough to fully compress the 60 Hz noise by –30 dB, therefore a notch filter with a 60 Hz cutoff frequency was added as the final filter. 
 
@@ -91,9 +91,7 @@ For some reason the low pass filter was not strong enough to fully compress the 
 
 					Figure 6: Twin-T Notch Filter Design 
 
- 
-
-**3.5 Amplification **
+**3.5 Amplification**
 
 If the signal is too small, then the Arduino would not be able to read the signal. Therefore, by adding a non-inverting amplifier into our circuit, the signal could be amplified large enough for the Arduino to read. The gain was found by using the general non-inverting amplifier gain equation: 
 𝐴𝑣=1+𝑅1𝑅2
@@ -166,7 +164,7 @@ From what was described in 3.1, a simulated circuit was designed in LT SPICE. Si
 
 					Figure 9C: Transimpedance Measurement 
 
-4.2 LT Spice Simulation: Lowpass Filter 
+**4.2 LT Spice Simulation: Lowpass Filter**
 
 The active lowpass filter was simulated to see which combinations of physical components could produce the closest desired cutoff frequency of 45 Hz.  
 
@@ -183,7 +181,7 @@ The active lowpass filter was simulated to see which combinations of physical co
 
 					Figure 10C: LT SPICE 45 Hz Cutoff Frequency of the Lowpass filter 
 
-4.3 LT Spice Simulation: Highpass Filter 
+**4.3 LT Spice Simulation: Highpass Filter**
 
 The active highpass filter was simulated to see which combination of physical components could produce the closest desired cutoff frequency of 0.2 Hz. 
 
@@ -197,7 +195,7 @@ The active highpass filter was simulated to see which combination of physical co
 
 					Figure 11B: LTSPICE 0.2 Hz Cutoff Frequency of the High Pass filter 
 
-4.4 LT Spice Simulation: Notch Filter 
+**4.4 LT Spice Simulation: Notch Filter** 
 
 The passive notch filter was simulated to see which combinations of physical components could produce the closest desired cutoff frequency of 60 Hz.  
 
@@ -228,7 +226,7 @@ The passive notch filter was simulated to see which combinations of physical com
 
  
 
-Physical Results 
+**5. Physical Results** 
 
  
 
@@ -241,7 +239,7 @@ The Waveform Scope in figure 13 shows a successful current-to-voltage converter
 
 					Figure 13: Physical Results of the Transimpedance Amplifier 
 
-Spectrum Analyzer 
+**Spectrum Analyzer** 
 
 The spectrum analyzer of the transimpedance revealed the frequencies of interest. The huge spike at 60 Hz needed to be brought down. 
 
@@ -258,7 +256,7 @@ The spectrum analyzer of the transimpedance revealed the frequencies of interest
  
  
 
-5.2 Low Pass Filter Physical Results 
+**5.2 Low Pass Filter Physical Results**
 
 The physical lowpass filter had a cutoff frequency of 44 Hz. The goal was 45 Hz, however being only one Hz off, the filter was acceptable. 
 
@@ -272,7 +270,7 @@ The physical lowpass filter had a cutoff frequency of 44 Hz. The goal was 45 Hz,
 					Figure 15B: The Spectrum Analysis of the lowpass filter vs the transimpedance amplifier 
 
 
-5.3 Highpass Filter Physical Results  
+**5.3 Highpass Filter Physical Results**  
 
 The physical high pass filter had a cutoff frequency of 5 Hz. The physical high pass filter cut off frequency did not match the simulated high pass filter cut off frequency of 1 Hz.	 
 
@@ -297,7 +295,7 @@ The physical high pass filter had a cutoff frequency of 5 Hz. The physical high 
 
  
 
-5.3 Notch Pass Filter Physical Results 
+**5.3 Notch Pass Filter Physical Results** 
 
 The physical notch pass filter was successful in eliminating the 60 Hz cutoff point. Still interesting that a notch pass filter would be needed even though a low pass filter with a cutoff frequency at 45 Hz was implemented.  
 
@@ -312,7 +310,7 @@ The physical notch pass filter was successful in eliminating the 60 Hz cutoff po
 
 					Figure 17B: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) Zoomed Out 
 
-5.5 Physical Circuit 
+**5.5 Physical Circuit** 
 
 The simulated circuit was constructed physically. Each subsystem of the circuit was measured and compared to the simulated results as a way of verifying correctness. 
 
@@ -329,7 +327,7 @@ The simulated circuit was constructed physically. Each subsystem of the circuit 
 
 					Figure 18B: The physical circuit 
 
-Digital Subsystem 
+**6. Digital Subsystem**
 
 Focusing on the digital subsystem, the digital subsystem is responsible for coordinating the entire operation of the SpO2 system. It controls the hardware components (LEDs, photodiode, and display), processes the signals, performs calculations, and updates the display. 
 Signal Reading: The microcontroller reads the signals from the photodiode through an analog input. The signals are generated by the light from the LEDs (Red and Infrared) that is reflected off the user's skin and received by the photodiode. 
@@ -338,7 +336,7 @@ Signal Processing: The Arduino processes the signals received from the photodiod
 Timing: The Arduino manages the timing of the readings, calculations, and display updates. It uses built-in functions like millis() and micros() to create non-blocking delays, allowing for regular updates without halting the entire program. 
 Display: The Arduino controls the OLED display to show the calculated heart rate and SpO2 level. It updates the display at regular intervals and also manages the scrolling of the waveform display. 
 
-6.1 Finite State Machine 
+**6.1 Finite State Machine** 
 
  
 <img width="694" height="423" alt="Figure19" src="https://github.com/user-attachments/assets/633bfb85-73e5-47e7-8f13-3985c8901f54" />
@@ -359,7 +357,7 @@ Read DC and AC Red and Infrared: Needed to measure the DC and AC signals from bo
 
 Calculate: Used to calculate both the value of Sp02 and R before the value is shown on the OLED screen. 
 
-6.2 Calculations 
+**6.2 Calculations** 
 
 It is important to note that displaying both the SpO2 value and the heart rate is an objective requirement. This can be achieved by identifying the frequency of the heart rate, subsequently determining the pulse period, and utilizing it accordingly. 
 
@@ -463,7 +461,7 @@ R
 
 To find the Sp02 value for the objective requirement. 
 
-6.3 Validation 
+**6.3 Validation** 
 
 Regrettably, difficulties were encountered in obtaining the accurate Heart rate and SpO2 values required for the project due to multiplexer errors. Due to issues while creating the second signal path, there was confusion on how to correctly implement the second signal path and caused the analog circuit to malfunction when implementing the multiplexer. 
 The cause of these errors was also likely attributed to issues within the code implementation, specifically related to problems encountered with the Interrupt function. Without the interrupt function being correctly implemented, there was a significant delay in switching between LEDs, resulting in inaccuracies in the measurement for both Heart Rate and SpO2 value. 
@@ -479,7 +477,7 @@ The cause of these errors was also likely attributed to issues within the code i
 
  
 
-7. Future Work 
+**7. Future Work** 
 
 To improve in the future, it is crucial to address the following areas: 
 
