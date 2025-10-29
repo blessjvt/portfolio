@@ -87,7 +87,8 @@ Due to noise that happens very early, small frequencies that tend to interfere w
 
 For some reason the low pass filter was not strong enough to fully compress the 60 Hz noise by –30 dB, therefore a notch filter with a 60 Hz cutoff frequency was added as the final filter. 
 
- 
+ <img width="699" height="317" alt="BasicTwin-TNotchFilter" src="https://github.com/user-attachments/assets/50c5bd18-f2b0-448b-a144-3fb23cad56d3" />
+
 					Figure 6: Twin-T Notch Filter Design 
 
  
@@ -130,7 +131,7 @@ The Arduino’s purposes are an analog to digital converter, processing, and com
 
 3.7 OLED 
 
-The goal for the OLED screen was to display both the Sp02 value, heart rate, and lastly the heartbeat pulse. The model we are using has only 4 pins and communicates with the Arduino Uno using I2C communication and with the help of both adafruit_SSD1306.h and the adafruit_GFX.h libraries. By correctly wiring the OLED screen to the microcontroller, we can observe the output of the circuit and display a pulse. Given the pulse, we can capture the DC and AC amplitude of both the Infrared and RED LED. Using that data, we can calcuclate the value of the Sp02 and heartrate . 
+The goal for the OLED screen was to display both the Sp02 value, heart rate, and lastly the heartbeat pulse. The model we are using has only 4 pins and communicates with the Arduino Uno using I2C communication and with the help of both adafruit_SSD1306.h and the adafruit_GFX.h libraries. By correctly wiring the OLED screen to the microcontroller, we can observe the output of the circuit and display a pulse. Given the pulse, we can capture the DC and AC amplitude of both the Infrared and RED LED. Using that data, we can calculate the value of the Sp02 and heart rate . 
 arduino with OLED display schematic diagram 
 
 					Figure 8: Arduino and OLED Display Implementation 
@@ -143,19 +144,21 @@ Simulated Results
 
 4.1 LT Spice Simulation: Transimpedance Amplifier  
 
-From what was described in 3.1, a simulated Circuited was designed in LT SPICE. Since the photosensor does not exist in LT SPICE, a current source of one microamps was used in its placed. The simulated results produced a 2VPP. 
+From what was described in 3.1, a simulated circuit was designed in LT SPICE. Since the photosensor does not exist in LT SPICE, a current source of one microamp was used in its place. The simulated results produced a 2VPP. 
 
- 
+ <img width="557" height="363" alt="Figure9A" src="https://github.com/user-attachments/assets/9637b3ff-daf2-432e-96ba-dcc6fa8eae94" />
+
 
 					Figure 9A: LT SPICE Transimpedance Schematic  
+					
 
- 
+ <img width="660" height="362" alt="Figure9B" src="https://github.com/user-attachments/assets/e383e52b-05f2-45fe-ae28-c688c9a76160" />
 
- 
 
 					Figure 9B: LT SPICE Transimpedance Plot of Input vs Output  
 
  
+<img width="572" height="385" alt="Figure9C" src="https://github.com/user-attachments/assets/a1489107-fdc6-487a-85f2-9272d99c3a49" />
 
 					Figure 9C: Transimpedance Measurement 
 
@@ -164,16 +167,15 @@ From what was described in 3.1, a simulated Circuited was designed in LT SPICE. 
 The active lowpass filter was simulated to see which combinations of physical components could produce the closest desired cutoff frequency of 45 Hz.  
 
  
+<img width="568" height="320" alt="Figure10A" src="https://github.com/user-attachments/assets/a061c7b2-a39f-44d8-9624-4220f6468efa" />
 
 					Figure 10A: LT SPICE circuit schematic of a 45 Cutoff Frequency Lowpass Filter 
 
- 
+<img width="555" height="352" alt="Figure10B" src="https://github.com/user-attachments/assets/0e5ec692-8e5e-41f3-87fe-7176b8a41092" />
 
 					Figure 10B: LT SPICE Lowpass filter BODE Plot 
 
- 
-
- 
+ <img width="407" height="400" alt="Figure10C" src="https://github.com/user-attachments/assets/5c5d822e-7cfd-4c55-afeb-0bc4746bbe5e" />
 
 					Figure 10C: LT SPICE 45 Hz Cutoff Frequency of the Lowpass filter 
 
@@ -181,11 +183,13 @@ The active lowpass filter was simulated to see which combinations of physical co
 
 The active highpass filter was simulated to see which combination of physical components could produce the closest desired cutoff frequency of 0.2 Hz. 
 
- 
+ <img width="573" height="340" alt="Figure11A" src="https://github.com/user-attachments/assets/2f2e82f1-2b05-4687-a73f-50a0664f9b27" />
+
 
 					Figure 11A: LTSPICE Bode Plot of the High pass filter 
 
- 
+ <img width="438" height="443" alt="Figure11B" src="https://github.com/user-attachments/assets/d2cc8962-9383-47e1-b6ba-46ac2d076735" />
+
 
 					Figure 11B: LTSPICE 0.2 Hz Cutoff Frequency of the High Pass filter 
 
@@ -194,13 +198,15 @@ The active highpass filter was simulated to see which combination of physical co
 The passive notch filter was simulated to see which combinations of physical components could produce the closest desired cutoff frequency of 60 Hz.  
 
  
- 
+ <img width="438" height="343" alt="Figure12A" src="https://github.com/user-attachments/assets/81a4f3e1-2de3-412a-84cb-1f692a95ed21" />
+
 
 					Figure 12A: LT SPICE Simulation of the Notch Filter 
 
  
 
  
+<img width="563" height="467" alt="Figure12B" src="https://github.com/user-attachments/assets/4df42fc4-1c7c-4059-a0e1-7b9106ff1389" />
 
  
 
@@ -210,6 +216,7 @@ The passive notch filter was simulated to see which combinations of physical com
 
  
  
+<img width="404" height="400" alt="Figure12C" src="https://github.com/user-attachments/assets/ddd189e4-a1b5-4852-9217-f9740ad7b171" />
 
  
 
@@ -225,19 +232,22 @@ Physical Results
 
 The Waveform Scope in figure 13 shows a successful current-to-voltage converter 
 
- 
+ <img width="561" height="324" alt="Figure13" src="https://github.com/user-attachments/assets/889522b6-5544-4d6d-9512-e51531ffc2ea" />
 
-Figure 13: Physical Results of the Transimpedance Amplifier 
+
+					Figure 13: Physical Results of the Transimpedance Amplifier 
 
 Spectrum Analyzer 
 
 The spectrum analyzer of the transimpedance revealed the frequencies of interest. The huge spike at 60 Hz needed to be brought down. 
 
- 
+ <img width="559" height="321" alt="Figure14A" src="https://github.com/user-attachments/assets/6015e078-d361-45c4-b39a-f903a3318b06" />
+
 
 					Figure 14A:  60 Hz Spike 
 
  
+<img width="559" height="309" alt="Figure14B" src="https://github.com/user-attachments/assets/9d69f54a-5a2c-4b79-9ad4-9b9c72874628" />
 
 					Figure 14B: Noise at the beginning of the signal 
 
@@ -249,6 +259,7 @@ The spectrum analyzer of the transimpedance revealed the frequencies of interest
 The physical lowpass filter had a cutoff frequency of 44 Hz. The goal was 45 Hz, however being only one Hz off, the filter was acceptable. 
 
  
+<img width="609" height="406" alt="FIgure15A" src="https://github.com/user-attachments/assets/3936f8f7-1f40-4fa7-9926-8068320d12d7" />
 
 					Figure 15A: The Bode Plot of the Physical High Pass Filter 
 
@@ -258,7 +269,8 @@ A screen shot of a graph
 
 Description automatically generated 
 
-					
+					<img width="598" height="418" alt="Figure15B" src="https://github.com/user-attachments/assets/68fd3f5c-fc8a-401c-a004-5e350e455064" />
+
 					Figure 15B: The Spectrum Analysis of the lowpass filter vs the transimpedance amplifier 
 
  
@@ -268,16 +280,19 @@ Description automatically generated
 The physical high pass filter had a cutoff frequency of 5 Hz. The physical high pass filter cut off frequency did not match the simulated high pass filter cut off frequency of 1 Hz.	 
 
 	 
+<img width="573" height="377" alt="Figure16A" src="https://github.com/user-attachments/assets/b1a6d57d-9fbb-4d8b-995d-e6f0dfacd0de" />
 
 					Figure 16A: The Bode Plot of the Physical High Pass Filter 
 
  
 
- 
+ <img width="571" height="386" alt="Figure16B" src="https://github.com/user-attachments/assets/0288f5c0-38e4-4c6d-b60a-1959aa0f5609" />
+
 
 					Figure 16B: The Spectrum analysis of the High pass filter output vs Low pass filter output 
 
  
+<img width="566" height="380" alt="Figure16C" src="https://github.com/user-attachments/assets/6aae3d01-0cf2-4c14-8651-7de866ad258a" />
 
  
 
@@ -291,11 +306,12 @@ The physical notch pass filter was successful in eliminating the 60 Hz cutoff po
 
  
 
-Inserting image... 
+<img width="715" height="403" alt="Figure17A" src="https://github.com/user-attachments/assets/123ef9d3-bc9d-46ca-bc2c-3a751e6ab9ca" />
 
 					Figure 17A: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) 
 
-Inserting image... 
+<img width="719" height="404" alt="Figure17B" src="https://github.com/user-attachments/assets/5db927dd-c6cf-426c-8fb0-9a2ffb48f203" />
+
 
 					Figure 17B: Spectrum Analysis of the notch filter output(blue) vs the transimpedance output(orange) Zoomed Out 
 
@@ -305,11 +321,13 @@ The simulated circuit was constructed physically. Each subsystem of the circuit 
 
  
 
- 
+ <img width="306" height="379" alt="Figure18A" src="https://github.com/user-attachments/assets/d574b918-e609-4f18-b524-8d1cab018dfb" />
+
 
 					Figure 18A: The transimpedance and Mux integrated in the physical circuit 
 
  
+<img width="415" height="321" alt="Figure18B" src="https://github.com/user-attachments/assets/974fea65-2e4f-4acc-9ab6-6a6e4aa205ed" />
 
  
 
@@ -327,6 +345,7 @@ Display: The Arduino controls the OLED display to show the calculated heart rate
 6.1 Finite State Machine 
 
  
+<img width="694" height="423" alt="Figure19" src="https://github.com/user-attachments/assets/633bfb85-73e5-47e7-8f13-3985c8901f54" />
 
 					Figure 19: An overall FSM of the digital subsystem 
 
@@ -453,13 +472,14 @@ To find the Sp02 value for the objective requirement.
 Regrettably, difficulties were encountered in obtaining the accurate Heart rate and SpO2 values required for the project due to multiplexer errors. Due to issues while creating the second signal path, there was confusion on how to correctly implement the second signal path and caused the analog circuit to malfunction when implementing the multiplexer. 
 The cause of these errors was also likely attributed to issues within the code implementation, specifically related to problems encountered with the Interrupt function. Without the interrupt function being correctly implemented, there was a significant delay in switching between LEDs, resulting in inaccuracies in the measurement for both Heart Rate and SpO2 value. 
 
+ <img width="325" height="305" alt="Figure20" src="https://github.com/user-attachments/assets/41a3d4d1-80a6-4ae2-a941-ded1a47b458c" />
+
+ 					Figure 20: OLED Display of the results 
+
  
+<img width="447" height="329" alt="Figure21" src="https://github.com/user-attachments/assets/0915b4d6-8fff-42f5-9e4a-6d31944397d6" />
 
-Figure 20: OLED Display of the results 
-
- 
-
-Figure 21: The two final output signals 
+					Figure 21: The two final output signals 
 
  
 
