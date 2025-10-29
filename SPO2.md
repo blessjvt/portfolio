@@ -90,18 +90,7 @@ For some reason the low pass filter was not strong enough to fully compress the 
 **3.5 Amplification**
 
 If the signal is too small, then the Arduino would not be able to read the signal. Therefore, by adding a non-inverting amplifier into our circuit, the signal could be amplified large enough for the Arduino to read. The gain was found by using the general non-inverting amplifier gain equation: 
-𝐴𝑣=1+𝑅1𝑅2
-A
-v
-=
-1
-+
-R
-1
-R
-2
- 
-. To get a large amplification, the R2 was designed to be the smallest, yet acceptable resistance value for the circuit. The value was 1k ohm. 
+$A_v=1 + \dfrac{1}{R1/R2}$ . To get a large amplification, the R2 was designed to be the smallest, yet acceptable resistance value for the circuit. The value was 1k ohm. 
 
 <img width="345" height="233" alt="Figure7" src="https://github.com/user-attachments/assets/6a4fc636-6e5b-4353-9553-9b05ff8b22ce" />
 
