@@ -63,19 +63,19 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 
 Due to noise that happens very early, small frequencies that tend to interfere with the consistent harmonic oscillations of the signal, a high pass filter with a cutoff frequency of 1.1 Hz was implemented.  A highpass filter allows high frequencies to pass while cutting off low frequencies. The cutoff frequency was determined by running the Spectrum Analyzer on Waveform and finding high or low spikes that were not within 5 margins of error compared to the harmonic oscillations. 
 
-<img width="564" height="378" alt="Figure5" src="https://github.com/user-attachments/assets/21dea657-44a2-44cf-bdac-01f10c4c4908" />
+  <img width="564" height="378" alt="Figure5" src="https://github.com/user-attachments/assets/21dea657-44a2-44cf-bdac-01f10c4c4908" />
 
 					Figure 5: Transfer function of 2nd order Lowpass filter 
 
- <img width="170" height="111" alt="Figure5A" src="https://github.com/user-attachments/assets/c7c0dd59-ac1f-48e7-b8ed-823387552bf1" />
+   <img width="170" height="111" alt="Figure5A" src="https://github.com/user-attachments/assets/c7c0dd59-ac1f-48e7-b8ed-823387552bf1" />
 
 					Figure 5A: Cutoff Frequency Equation of a High pass filter 
  
-<img width="176" height="79" alt="Figure5B" src="https://github.com/user-attachments/assets/4a085932-23e6-4197-b938-c41ce959fc7f" />
+  <img width="176" height="79" alt="Figure5B" src="https://github.com/user-attachments/assets/4a085932-23e6-4197-b938-c41ce959fc7f" />
 
 					Figure 5B: Transfer function of a 2nd order High pass filter 
 
- <img width="343" height="113" alt="Figure5C" src="https://github.com/user-attachments/assets/a357446d-33b8-49c0-9447-fe851bd6fc3a" />
+   <img width="343" height="113" alt="Figure5C" src="https://github.com/user-attachments/assets/a357446d-33b8-49c0-9447-fe851bd6fc3a" />
 
 					Figure 5C: Magnitude of the Transfer function of a 2nd order High pass filter 
 
