@@ -26,7 +26,7 @@ A transimpedance amplifier was implemented in the circuit to convert a current s
 
  <img width="448" height="334" alt="transimpedance amplifier" src="https://github.com/user-attachments/assets/e95c0c45-5ca3-4dba-b2b1-1cfe4a8f452c" />
 
-	Figure 2: Transimpedance Amplifier 
+					Figure 2: Transimpedance Amplifier 
 
 3.3 Multiplexer 
 
@@ -34,17 +34,17 @@ As mentioned in 3.1, the multiplexer used in the circuit was the CD405xB CMOS Si
 
  <img width="539" height="349" alt="MultiplexerPinout" src="https://github.com/user-attachments/assets/0f670f1f-9cb2-4f9c-8c86-a9207833d433" />
 
-	Figure 3A: CD0453B Multiplexer Pinout 
+					Figure 3A: CD0453B Multiplexer Pinout 
 
  <img width="580" height="333" alt="Figure3b" src="https://github.com/user-attachments/assets/9049197f-4a9d-4ad9-8593-cc8f8e62f5b4" />
 
-	Figure 3B: CD0453B Multiplexer Pin Functions 
+					Figure 3B: CD0453B Multiplexer Pin Functions 
 
 The physical connections to and from the mux can be found in Figure 3C. The selecting bit controls which LED is of priority. Pins 15 essentially says if bx (the transimpedance output signal) is high, then by is low, if bx is low, then by is high. The same concept applied to Pin 14. 
 
 <img width="744" height="302" alt="Figure3C" src="https://github.com/user-attachments/assets/683e518b-d0f7-4757-857e-09024805ab3a" />
 
-	Figure 3C: CD0453B Multiplexer Pin Connections 
+					Figure 3C: CD0453B Multiplexer Pin Connections 
 
 3.4 Filters 
 
@@ -56,7 +56,7 @@ The AC signal that derives from the photodiode tends to be corrupted by 60 Hz no
 
 <img width="711" height="151" alt="Figure4" src="https://github.com/user-attachments/assets/3afca504-214e-4ee2-9132-9d21ad776fb9" />
 
-	Figure 4: Transfer function of 2nd order Lowpass filter 
+					Figure 4: Transfer function of 2nd order Lowpass filter 
 
  
 
