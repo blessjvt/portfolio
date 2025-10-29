@@ -109,6 +109,8 @@ R
  
 . To get a large amplification, the R2 was designed to be the smallest, yet acceptable resistance value for the circuit. The value was 1k ohm. 
 
+<img width="345" height="233" alt="Figure7" src="https://github.com/user-attachments/assets/6a4fc636-6e5b-4353-9553-9b05ff8b22ce" />
+
  
 					Figure 7: Non-inverting Amplifier Schematic and Gain Equation 
 
@@ -133,6 +135,8 @@ The Arduino’s purposes are an analog to digital converter, processing, and com
 
 The goal for the OLED screen was to display both the Sp02 value, heart rate, and lastly the heartbeat pulse. The model we are using has only 4 pins and communicates with the Arduino Uno using I2C communication and with the help of both adafruit_SSD1306.h and the adafruit_GFX.h libraries. By correctly wiring the OLED screen to the microcontroller, we can observe the output of the circuit and display a pulse. Given the pulse, we can capture the DC and AC amplitude of both the Infrared and RED LED. Using that data, we can calculate the value of the Sp02 and heart rate . 
 arduino with OLED display schematic diagram 
+
+<img width="409" height="282" alt="Figure8" src="https://github.com/user-attachments/assets/e76bf907-eb00-4706-8eb1-8781b47ffb31" />
 
 					Figure 8: Arduino and OLED Display Implementation 
 
