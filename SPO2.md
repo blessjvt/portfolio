@@ -6,42 +6,24 @@ Introduction
 The product tasked to design was an SP02 oximeter and a heartbeat monitor. A pulse oximeter measures how much red and infrared light is being absorbed to determine the oxygen levels in a human’s body system. The ratio of the red-light measurement to the infrared light measurement would then tell how much oxygenated blood there is in the body, compared to deoxygenated. The SP02 design implements a Nellcor Ds- 100A connected with an SP02 finger sensor, a transimpedance amplifier, different filter designs, amplifiers, a multiplexer, an Arduino, and an OLED Display. 
 
 High Level Design 
-
-A diagram of a diagram
-
-
- 
-
- 
+<img width="702" height="280" alt="DiagramofaDiagram" src="https://github.com/user-attachments/assets/2b088b63-d3ec-418a-a25e-8b202a24a161" />
 
 Subsystems 
 
-        3.1 Sensor 
+3.1 Sensor 
 
 The sensor consists of two anti-parallel LEDS, a red (660nm) and an infrared (940nm), that transmit light through the finger to a photodiode on the other side.  Pins 2 and 3 were connected to the CD405xB CMOS Single 8- Channel Analog Multiplexer (goes more in depth on the role, in 3.3) to switch between the two signals. 
 
- 
 
-Figure 1: Nellcor Sp02 Sensor Pinout 
+ <img width="379" height="370" alt="Sensor Pinout" src="https://github.com/user-attachments/assets/e7336416-536a-41f0-a198-c5436d8a8e32" />
+
+						Figure 1: Nellcor Sp02 Sensor Pinout 
 
  
 
 3.2 Transimpedance Amplifier 
 
-A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation 
-𝐶=12⋅𝜋⋅𝑅⋅𝑓
-C
-=
-1
-2
-⋅
-𝜋
-⋅
-R
-⋅
-f
- 
-. Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
+A transimpedance amplifier was implemented in the circuit to convert a current source value that is output from the sensor to a voltage value, that will be sent down the path and be used to determine the SP02 value of the user. The capacitor value of the transimpedance amplifier was founded by using the equation $$ C=\dfrac{1}{2\pi\cdot R\cdot f} $$ Without amplification the reading of the current from the transimpedance amplifier is in the micro levels. As a result, a high resistance value for the feedback resistor (600k ohms) was chosen, and then plugged it in the equation. Since the lowest frequency heartbeat that needed attention was 40bpm, a frequency of 2/3 Hz was plugged in the equation. 
 
  
 
