@@ -294,6 +294,7 @@ The experiment involved eight autonomous vehicles approaching a four-way interse
 The simulation processed all vehicles through the refined scheduler, which computed their Target Arrival Times (ToA), Actuation Times (TAc), and assigned velocities based on spatial conflicts and vehicle constraints. A unit test was designed and implemented to ensure the core functions and helper functions work as intended. Below in Figure 2 is the output of the Matlab command window when the unit test was ran.
 
 <img width="282" height="111" alt="Screenshot 2025-10-30 at 1 23 59 PM" src="https://github.com/user-attachments/assets/7b645645-cdd5-42b1-ac3b-8beb1d974427" />
+
 Figure 2: Screenshot of formal verification after running the Unit Test
 
 ### *C. Safety Results*
