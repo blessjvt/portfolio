@@ -1,3 +1,7 @@
 theme: jekyll-theme-cayman
 title: Bless Jah
 description: Project Portfolio
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
