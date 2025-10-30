@@ -13,6 +13,8 @@
 ## [Autonomous Intersection Management System](SPO2.md)
 ![spo2_image](https://github.com/user-attachments/assets/99f00594-f98c-4cf5-8795-c1a68046bf87)
 
+## [Simulink Models](SPO2.md)
+
 ## [Real Time Systems Different Schedular Implementations](SPO2.md)
 <img width="709" height="472" alt="RTS" src="https://github.com/user-attachments/assets/7490225c-f459-4a28-859d-b904d15e7be9" />
 
