@@ -58,12 +58,11 @@ The original Crossroads system computes a Target Arrival Time (ToA) and an Actua
 ## *B. Refinement 1: Incorporating Vehicle Length*
 
 To account for physical vehicle dimensions, we revise the scheduling logic to maintain a minimum safety distance that includes both vehicles' lengths. Let `L1` and `L2` be the lengths of two consecutive vehicles, and let `safetyGap` be the required minimum clearance. The system ensures:
-
-![][image1]
+<img width="277" height="63" alt="Screenshot 2025-10-30 at 1 14 25 PM" src="https://github.com/user-attachments/assets/8bee532e-02fd-4926-ab22-05c35ff48fcd" />
 
 The actuation time and ToA for a following vehicle (vehicle 2\) are computed as:
 
-`![][image2]`
+<img width="236" height="97" alt="Screenshot 2025-10-30 at 1 14 31 PM" src="https://github.com/user-attachments/assets/717f74bb-dde0-4436-a9a7-66b9aab4c308" />
 
 Here, dpath2 is the distance vehicle 2 must travel through the intersection. This guarantees that the second vehicle enters the intersection only after the first has fully cleared it.
 
@@ -367,7 +366,6 @@ By combining formal verification with simulation-based validation, we provide a 
 \[3\] Traffic Intersection Simulator for Autonomous Vehicles, [GitHub Repository](https://github.com/mkhayatian/Traffic-Intersection-Simulator-for-Autonomous-Vehicles).
 
 7. # Appendix: Added files
-
 List files that that were added or modified:  
 pathLength.m  
 IntersectionManagement.m  
