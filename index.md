@@ -12,9 +12,8 @@ For a year and a half, I analyzed potential privacy risks faced by screen reader
 
 ![IMG_2937](https://github.com/user-attachments/assets/6293b21b-0314-45ac-aaa5-d4fa0c326c1a)
 
-## [Autonomous Intersection Management System](CyberPhysical Project Report.md)
+## [Autonomous Intersection Management System](Intersection.md)
 With a partner, we refined a given Crossroads scheduling algorithm to account for real-world vehicle behavior—length and turn maneuvers(left/right/straight) to boost both efficiency and safety. We proved collision avoidance and overall correctness with KeYmaera X (a hybrid theorem prover) then validated performance in a custom MATLAB intersection simulator.
-
 
 <img width="1280" height="1280" alt="crossroads" src="https://github.com/user-attachments/assets/da46abb8-b524-419c-a6a7-c77677a04a08" />
 
