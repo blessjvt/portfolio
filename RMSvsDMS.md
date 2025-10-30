@@ -1,5 +1,5 @@
   
-**RMS vs DMS**
+# RMS vs DMS
 
 ## **Flow Diagram of the Function Calls used:**
 
