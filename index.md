@@ -9,6 +9,7 @@
 
 ## [Privacy Implication of Using Assistive Technologies on the Web ](SPO2.md)
 <img width="1555" height="633" alt="PrivacyRiskinAds" src="https://github.com/user-attachments/assets/c65a4ee1-77c6-45cd-b3a3-7e04568874c6" />
-![IMG_2937](https://github.com/user-attachments/assets/6293b21b-0314-45ac-aaa5-d4fa0c326c1a)
 
-(**Project titles can be clicked for more detailed articles**)
+![IMG_2937](https://github.com/user-attachments/assets/6293b21b-0314-45ac-aaa5-d4fa0c326c1a) {: width="60%" }
+
+(**Project titles can be clicked for more detailed articles**) 
