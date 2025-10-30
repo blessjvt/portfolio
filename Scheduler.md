@@ -86,3 +86,5 @@ To address this, I updated the absolute deadline based on the adjusted release t
 <img width="515" height="543" alt="Screenshot 2025-10-30 at 2 08 46 PM" src="https://github.com/user-attachments/assets/d64729f3-6ed3-47fe-9ffd-3fb0b7b53497" />
 
 <img width="437" height="717" alt="Screenshot 2025-10-30 at 2 09 05 PM" src="https://github.com/user-attachments/assets/c51aeb92-edd2-4155-9bc3-18cf3933f40d" />
+
+# OCPP vs ICPP 
