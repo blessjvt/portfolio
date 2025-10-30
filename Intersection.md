@@ -327,7 +327,11 @@ While the average delay is relatively high, primarily due to complex turning int
 
 ### *E. Vehicle-Level Results*
 
-A summary of individual vehicle data is presented in Table 1.**<img width="342" height="62" alt="Screenshot 2025-10-30 at 1 24 52 PM" src="https://github.com/user-attachments/assets/aef9b4b4-b74e-4fed-9a4e-cf96f5103b16" />**Table 1\. Vehicle scheduling results showing individual performance metrics.
+A summary of individual vehicle data is presented in Table 1.
+
+<img width="342" height="62" alt="Screenshot 2025-10-30 at 1 24 52 PM" src="https://github.com/user-attachments/assets/aef9b4b4-b74e-4fed-9a4e-cf96f5103b16" />
+
+Table 1. Vehicle scheduling results showing individual performance metrics.
 
 
 ### *F. Analysis*
