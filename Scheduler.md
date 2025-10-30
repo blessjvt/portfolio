@@ -1,7 +1,11 @@
-Bless Jah  
-April 3, 2025  
-ECE4550  
-					Project 3 Report
+
+
+  
+# RMS vs DMS 
+
+## Flow Diagram of the Function Calls used:
+
+<img width="4944" height="2537" alt="RTOS-Project 2 drawio (2)" src="https://github.com/user-attachments/assets/958c1caf-b47c-4e0a-bf2e-497dcb63429d" />
 
 # **Part 1 DMS Priority Assignment** 
 
