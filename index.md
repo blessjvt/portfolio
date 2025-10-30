@@ -19,7 +19,7 @@ With a partner, we refined a given Crossroads scheduling algorithm to account fo
 
 ## [Real Time Systems Different Schedular Implementations](SPO2.md)
 
-Using an Arduino Mega and the serial monitor, I implemented several scheduling algorithms (Rate-Monotonic, Deadline-Monotonic, Original Ceiling Priority Protocol, and Immediate Ceiling Priority Protocol) in C. Based on a set of tasks with defined deadlines, execution times, and periods, I verified the correctness of each algorithm’s behavior and outcomes, then analyzed their scheduling results to demonstrate the differences in performance and behavior among them.
+Using an Arduino Mega and the serial monitor, I implemented and observed several scheduling algorithms (Rate-Monotonic, Deadline-Monotonic, Original Ceiling Priority Protocol, and Immediate Ceiling Priority Protocol) in C. Based on a set of tasks with defined deadlines, execution times, and periods, I verified the correctness of each algorithm’s behavior and outcomes, then analyzed their scheduling results to demonstrate the differences in performance and behavior among them.
 
 <img width="709" height="472" alt="RTS" src="https://github.com/user-attachments/assets/7490225c-f459-4a28-859d-b904d15e7be9" />
 
