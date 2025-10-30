@@ -1,6 +1,6 @@
 #theme: jekyll-theme-chirpy
 # _config.yml
-remote_theme: pages-themes/cotes2020/jekyll-theme-chirpy
+remote_theme: cotes2020/jekyll-theme-chirpy
 plugins:
   - jekyll-remote-theme
 
