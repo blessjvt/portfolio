@@ -239,7 +239,7 @@ That line of code ensures that the vehicles are always separated by at least saf
 
 The correctness proof confirms that under our refined algorithm, vehicles never collide. A screenshot of the successful verification, found in Figure 1, demonstrates this formal guarantee:
 
-![][image3]
+<img width="411" height="147" alt="Screenshot 2025-10-30 at 1 20 27 PM" src="https://github.com/user-attachments/assets/ea133c16-ac65-474f-b245-e98f5368acb0" />
 
 Figure 1: Screenshot of formal verification in KeYmaera X
 
@@ -263,11 +263,11 @@ Five helper functions now support the main scheduler. The function “makeIMPack
 
 The functionality of the safety protocol implemented in KeYmaerax resides in the two timing functions. The first, “calculateActuationTime(nowTime, prevVeh, safetyGap)”, enforces sequential clearance by returning
 
-![][image4]
+<img width="353" height="66" alt="Screenshot 2025-10-30 at 1 22 47 PM" src="https://github.com/user-attachments/assets/6e966108-7637-4acc-86f3-1fe15fef5ce6" />
 
 where *prevVeh* denotes the most recently scheduled vehicle. This evaluation guarantees that a vehicle’s front bumper enters the conflict zone only after its predecessor’s rear bumper has fully exited and the prescribed safetyGap has elapsed. Subsequently, “calculateTargetArrivalTime(TE, car, laneWidth)” assigns the vehicle its maximum cruising speed (vmax) and computes the time of arrival
 
-![][image5]
+<img width="215" height="58" alt="Screenshot 2025-10-30 at 1 23 12 PM" src="https://github.com/user-attachments/assets/dec7935c-bfd2-4fef-a810-b3abd92aa5e0" />
 
 where dpath  is obtained from “pathLength”. This calculation returns the precise instant at which the vehicle’s rear bumper clears the intersection.
 
@@ -275,7 +275,7 @@ Within the refactored *IntersectionManagement.m*, each incoming request is trans
 
 To verify correctness, we implemented test cases: a unit test and a scheduler test. Unit tests verify that pathLength, calculateActuationTime, and calculateTargetArrivalTime produce expected outputs for canonical geometric and temporal scenarios. An integration test simulates vehicle arrivals and confirms that every pair of potentially conflicting vehicles satisfies the inequality
 
-![][image6]
+<img width="329" height="52" alt="Screenshot 2025-10-30 at 1 23 31 PM" src="https://github.com/user-attachments/assets/01f334e0-fe0b-4190-9437-01294ad7af5c" />
 
 thereby ensuring the enforced temporal buffer (safetyGap) suffices to prevent overlap. These tests, in conjunction with our formal KeYmaeraX proof, provide rigorous assurance of the scheduler’s ability to uphold safety requirements under the Crossroads protocol.
 
@@ -293,8 +293,7 @@ The experiment involved eight autonomous vehicles approaching a four-way interse
 
 The simulation processed all vehicles through the refined scheduler, which computed their Target Arrival Times (ToA), Actuation Times (TAc), and assigned velocities based on spatial conflicts and vehicle constraints. A unit test was designed and implemented to ensure the core functions and helper functions work as intended. Below in Figure 2 is the output of the Matlab command window when the unit test was ran.
 
-![][image7]
-
+<img width="282" height="111" alt="Screenshot 2025-10-30 at 1 23 59 PM" src="https://github.com/user-attachments/assets/7b645645-cdd5-42b1-ac3b-8beb1d974427" />
 Figure 2: Screenshot of formal verification after running the Unit Test
 
 ### *C. Safety Results*
@@ -327,7 +326,8 @@ While the average delay is relatively high, primarily due to complex turning int
 
 ### *E. Vehicle-Level Results*
 
-A summary of individual vehicle data is presented in Table 1.**![][image8]**Table 1\. Vehicle scheduling results showing individual performance metrics.
+A summary of individual vehicle data is presented in Table 1.**<img width="342" height="62" alt="Screenshot 2025-10-30 at 1 24 52 PM" src="https://github.com/user-attachments/assets/aef9b4b4-b74e-4fed-9a4e-cf96f5103b16" />**Table 1\. Vehicle scheduling results showing individual performance metrics.
+
 
 ### *F. Analysis*
 
