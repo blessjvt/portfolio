@@ -4,7 +4,7 @@
 ## [SolarCarVT Telemetry and Embedded Work]
 ![VTSOLARCAR](https://github.com/user-attachments/assets/05bb7465-7a91-4606-ab5c-379bee32f3e3)
 
-## [Privacy Implication of Using Assistive Technologies on the Web ](SPO2.md)
+## [Privacy Implication of Using Assistive Technologies on the Web ]
 For a year and a half, I analyzed potential privacy risks faced by screen reader users when navigating ad-driven websites. Using both manual methods and my own custom large-scale automated process that simulated screen reader navigation and interaction behaviors (hover, click, tab) using Selenium, I collected and analyzed datasets to identify tracking of user data through ad interactions.
 
 
