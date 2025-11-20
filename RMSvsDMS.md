@@ -3,7 +3,7 @@
 
 ## **Flow Diagram of the Function Calls used:**
 
-<img width="4944" height="2537" alt="RTOS-Project 2 drawio (2)" src="https://github.com/user-attachments/assets/958c1caf-b47c-4e0a-bf2e-497dcb63429d" />
+<img alt="RTOS-Project 2 drawio (2)" src="https://github.com/user-attachments/assets/958c1caf-b47c-4e0a-bf2e-497dcb63429d" />
 
 # **Part 1 DMS Priority Assignment** 
 
@@ -19,9 +19,9 @@ prvSetFixedPriorities() handles the priority assignment of tasks. In this functi
 
  /\* Task Set 1 \*/ 
 
-<img width="712" height="92" alt="Screenshot 2025-10-30 at 2 03 33 PM" src="https://github.com/user-attachments/assets/ab45c3d1-a249-4202-b05e-917aa37e8024" />
+<img alt="Screenshot 2025-10-30 at 2 03 33 PM" src="https://github.com/user-attachments/assets/ab45c3d1-a249-4202-b05e-917aa37e8024" />
 
-<img width="616" height="826" alt="Screenshot 2025-10-30 at 2 04 18 PM" src="https://github.com/user-attachments/assets/b074931a-e90b-407a-a62d-79aeb5f60660" />
+<img alt="Screenshot 2025-10-30 at 2 04 18 PM" src="https://github.com/user-attachments/assets/b074931a-e90b-407a-a62d-79aeb5f60660" />
 
 
 The screenshot confirms a working script. The priority is set correctly, as Task 2 has the lowest period and therefore the highest priority. The list continues in this manner.
@@ -45,23 +45,23 @@ The DMS implementation was simple once I got the RMS implementation working. The
 
 In prvSetFixedPriorities(), I made sure to change the check from the shortest period to the shortest deadline. After each condition is met, the xShortest pointer is set to the RelativeDeadline. From that point on, the function follows the same logic as RMS.
 
-<img width="567" height="73" alt="Screenshot 2025-10-30 at 2 04 45 PM" src="https://github.com/user-attachments/assets/3c9ccf18-9df5-436a-b602-b9337910a27d" />
+<img alt="Screenshot 2025-10-30 at 2 04 45 PM" src="https://github.com/user-attachments/assets/3c9ccf18-9df5-436a-b602-b9337910a27d" />
 
-<img width="528" height="654" alt="Screenshot 2025-10-30 at 2 05 14 PM" src="https://github.com/user-attachments/assets/a157eb74-85d3-4e98-9981-2f3b9ea583f7" />
+<img alt="Screenshot 2025-10-30 at 2 05 14 PM" src="https://github.com/user-attachments/assets/a157eb74-85d3-4e98-9981-2f3b9ea583f7" />
 
 # **Part 3 \- Periodic Tasks**
 
 	  
 **TASK SET**
 
-<img width="528" height="689" alt="Screenshot 2025-10-30 at 2 05 53 PM" src="https://github.com/user-attachments/assets/b76d3d0e-63ff-4dbc-80a9-144e8384062a" />
+<img alt="Screenshot 2025-10-30 at 2 05 53 PM" src="https://github.com/user-attachments/assets/b76d3d0e-63ff-4dbc-80a9-144e8384062a" />
 
-<img width="624" height="757" alt="Screenshot 2025-10-30 at 2 06 09 PM" src="https://github.com/user-attachments/assets/34722e15-9bf7-4ae2-b388-3bf187a9a39f" />
+<img alt="Screenshot 2025-10-30 at 2 06 09 PM" src="https://github.com/user-attachments/assets/34722e15-9bf7-4ae2-b388-3bf187a9a39f" />
 
 **TASK SET 2**
 
-<img width="620" height="651" alt="Screenshot 2025-10-30 at 2 06 29 PM" src="https://github.com/user-attachments/assets/b18e4088-07a3-404d-9f4b-1d414f932e30" />
-<img width="632" height="692" alt="Screenshot 2025-10-30 at 2 06 41 PM" src="https://github.com/user-attachments/assets/6df0297c-d598-420c-889f-71e2c2f846d4" />
+<img alt="Screenshot 2025-10-30 at 2 06 29 PM" src="https://github.com/user-attachments/assets/b18e4088-07a3-404d-9f4b-1d414f932e30" />
+<img alt="Screenshot 2025-10-30 at 2 06 41 PM" src="https://github.com/user-attachments/assets/6df0297c-d598-420c-889f-71e2c2f846d4" />
 
 **Discussion:**
 
@@ -76,11 +76,11 @@ To address this, I updated the absolute deadline based on the adjusted release t
 
 **TASK SET 1**
 
-<img width="571" height="684" alt="Screenshot 2025-10-30 at 2 08 15 PM" src="https://github.com/user-attachments/assets/334499db-a57e-4019-ad63-19cdc90619d7" />
+<img alt="Screenshot 2025-10-30 at 2 08 15 PM" src="https://github.com/user-attachments/assets/334499db-a57e-4019-ad63-19cdc90619d7" />
 
-<img width="554" height="572" alt="Screenshot 2025-10-30 at 2 08 32 PM" src="https://github.com/user-attachments/assets/bbab7d70-3c6a-4810-b40f-d7c6afc65fe5" />
+<img alt="Screenshot 2025-10-30 at 2 08 32 PM" src="https://github.com/user-attachments/assets/bbab7d70-3c6a-4810-b40f-d7c6afc65fe5" />
 
 **TASK SET 2**  
-<img width="515" height="543" alt="Screenshot 2025-10-30 at 2 08 46 PM" src="https://github.com/user-attachments/assets/d64729f3-6ed3-47fe-9ffd-3fb0b7b53497" />
+<img alt="Screenshot 2025-10-30 at 2 08 46 PM" src="https://github.com/user-attachments/assets/d64729f3-6ed3-47fe-9ffd-3fb0b7b53497" />
 
-<img width="437" height="717" alt="Screenshot 2025-10-30 at 2 09 05 PM" src="https://github.com/user-attachments/assets/c51aeb92-edd2-4155-9bc3-18cf3933f40d" />
+<img alt="Screenshot 2025-10-30 at 2 09 05 PM" src="https://github.com/user-attachments/assets/c51aeb92-edd2-4155-9bc3-18cf3933f40d" />
