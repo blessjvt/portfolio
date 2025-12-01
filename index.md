@@ -1,7 +1,7 @@
 (**Project titles can be clicked for more detailed articles**)
 # **Projects:**
 
-## [SolarCarVT Telemetry and Embedded Work]
+## [SolarCarVT Telemetry and Embedded Work](SolarCar.md)
 ![VTSOLARCAR](https://github.com/user-attachments/assets/05bb7465-7a91-4606-ab5c-379bee32f3e3)
 
 ## [Privacy Implication of Using Assistive Technologies on the Web ]
