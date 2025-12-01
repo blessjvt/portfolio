@@ -42,4 +42,10 @@ Performed LoRa radio range testing by collecting data while biking, measuring wh
 
 Wrote and tested CAN-bus code on an Adafruit Feather RP2040 to communicate with the Elmar MPPT, including wiring, crimping connectors, and bringing up the full test setup. 
 
+<img width="640" height="610" alt="SCFig1" src="https://github.com/user-attachments/assets/446b1508-4d18-479d-8090-9f0f6a2d73ee" />
+
 Corrected the MPPT base address (matching the rotary-switch setting) and the baud rate, then used Prohelion Profinity to confirm that the HEX IDs and decoded values matched the manufacturer’s GUI. 
+
+<img width="629" height="140" alt="SCFig3" src="https://github.com/user-attachments/assets/4253de92-2487-4498-af70-a6a0b8595cbe" />
+
+<img width="637" height="292" alt="SCFig2" src="https://github.com/user-attachments/assets/31a62986-1ca7-4765-9aea-2fabecd4b9fb" />
